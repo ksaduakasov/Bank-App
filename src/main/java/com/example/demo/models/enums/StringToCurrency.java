@@ -5,7 +5,7 @@ import com.example.demo.enums.Currency;
 
 import static com.example.demo.enums.Currency.*;
 
-public class CurrencyUtils {
+public class StringToCurrency {
 
     public static Currency convertStringToCurrency (String currency) {
         switch (currency.toLowerCase()) {
