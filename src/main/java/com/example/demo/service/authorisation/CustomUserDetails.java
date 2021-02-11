@@ -1,7 +1,7 @@
 package com.example.demo.authorisation;
 
 
-import com.example.demo.entity.User;
+import com.example.demo.models.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

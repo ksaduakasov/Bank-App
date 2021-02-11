@@ -1,4 +1,4 @@
-package com.example.demo.utils;
+package com.example.demo.enums;
 
 
 import com.example.demo.enums.Currency;
