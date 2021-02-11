@@ -30,7 +30,7 @@
                 <td th:text="${customerAccount.id}" />
                     <td><strong th:text="${customerAccount.customerAccountBalance}"></strong></td>
                     <td class="text-success"><strong th:text="${customerAccount.currency}"></strong></td>
-                    <td><a th:href="@{/withdrawals/account/{id} (id=${customerAccount.id})}" class="btn btn-primary btn-sm" role="button">View Transactions</a></td>
+                    <td><a th:href="@{/withdrawals/account/{id} (id=${customerAccount.id})}" class="btn btn-warning btn-sm" role="button">View Transactions</a></td>
 
                 </tr>
 

@@ -1,9 +1,7 @@
-package com.example.demo.enums;
+package com.example.demo.models.enums;
 
 
-import com.example.demo.enums.Currency;
-
-import static com.example.demo.enums.Currency.*;
+import static com.example.demo.models.enums.Currency.*;
 
 public class StringToCurrency {
 

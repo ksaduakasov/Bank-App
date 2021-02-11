@@ -1,4 +1,4 @@
-package com.example.demo.authorisation;
+package com.example.demo.service.authorisation;
 
 
 import com.example.demo.models.User;

@@ -1,7 +1,7 @@
-package com.example.demo.entity;
+package com.example.demo.models;
 
 
-import com.example.demo.enums.Currency;
+import com.example.demo.models.enums.Currency;
 
 import javax.persistence.*;
 import java.util.List;

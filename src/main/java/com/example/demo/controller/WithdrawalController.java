@@ -1,12 +1,12 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.authorisation.CustomUserDetails;
-import com.example.demo.entity.CustomerAccount;
-import com.example.demo.entity.Withdrawals;
+import com.example.demo.service.authorisation.CustomUserDetails;
+import com.example.demo.models.CustomerAccount;
+import com.example.demo.models.Withdrawals;
 import com.example.demo.repository.CustomerAccountRepository;
 import com.example.demo.repository.WithdrawalRepository;
-import com.example.demo.resources.WithdrawalForm;
+import com.example.demo.components.WithdrawalForm;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

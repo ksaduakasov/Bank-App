@@ -2,11 +2,11 @@ package com.example.demo.service;
 
 
 
-import com.example.demo.entity.CustomerAccount;
-import com.example.demo.entity.Deposits;
-import com.example.demo.entity.User;
-import com.example.demo.entity.Withdrawals;
-import com.example.demo.resources.UserCreateForm;
+import com.example.demo.models.CustomerAccount;
+import com.example.demo.models.Deposits;
+import com.example.demo.models.User;
+import com.example.demo.models.Withdrawals;
+import com.example.demo.components.UserCreateForm;
 
 import java.util.List;
 import java.util.Optional;

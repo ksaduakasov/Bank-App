@@ -2,7 +2,7 @@ package com.example.demo.validator;
 
 
 import com.example.demo.repository.UserRepository;
-import com.example.demo.resources.UserCreateForm;
+import com.example.demo.components.UserCreateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

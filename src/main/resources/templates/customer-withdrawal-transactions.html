@@ -9,12 +9,7 @@
 
 <!-- Page Content -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h1 class="mt-5">Welcome To KalbekBank!</h1>
-            <p class="lead">Here you can manage your accounts, balances and transactions!</p>
-        </div>
-    </div>
+
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -23,7 +18,7 @@
                 </div>
                 <div class="panel-body">
                     <div th:replace="fragments/withdrawal-table :: withdrawal-table"></div>
-                    <button type="button" class="btn btn-primary pull-down" data-toggle="modal" data-target="#addWithdrawal">
+                    <button type="button" class="btn btn-warning pull-down" data-toggle="modal" data-target="#addWithdrawal">
                         <span class="glyphicon glyphicon-transfer"></span> Perform Withdrawal
                     </button>
                     <div th:replace="fragments/add-withdrawal-modal :: add-withdrawal-modal"></div>

@@ -1,4 +1,4 @@
-package com.example.demo.resources;
+package com.example.demo.components;
 
 
 import org.hibernate.validator.constraints.Length;

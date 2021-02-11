@@ -1,15 +1,15 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.authorisation.CustomUserDetails;
-import com.example.demo.entity.CustomerAccount;
-import com.example.demo.entity.Deposits;
-import com.example.demo.enums.Currency;
+import com.example.demo.service.authorisation.CustomUserDetails;
+import com.example.demo.models.CustomerAccount;
+import com.example.demo.models.Deposits;
+import com.example.demo.models.enums.Currency;
 import com.example.demo.repository.CustomerAccountRepository;
 import com.example.demo.repository.DepositRepository;
-import com.example.demo.resources.DepositForm;
+import com.example.demo.components.DepositForm;
 import com.example.demo.service.UserService;
-import com.example.demo.utils.CurrencyUtils;
+import com.example.demo.models.enums.StringToCurrency;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -70,14 +70,57 @@ public class DepositController {
 
         var customerAccountId = depositForm.getCustomerAccountId();
         var amount = depositForm.getAmount();
-        Currency currency = CurrencyUtils.convertStringToCurrency(depositForm.getCurrency());
+        Currency currency = StringToCurrency.convertStringToCurrency(depositForm.getCurrency());
 
         CustomerAccount customerAccount =  customerAccountRepository.findCustomerAccountById(customerAccountId);
 
         if(customerAccount !=null && customerAccount.getCustomerAccountBalance() > 0) {
+            if(customerAccount.getCurrency().equals(Currency.TENGE)) {
+                switch (depositForm.getCurrency()) {
+                    case "tenge":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + amount);
+                        break;
+                    case "ruble":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + (amount * 5.66));
+                        break;
+                    case "dollar":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + (amount * 417));
+                        break;
+                    default:
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + amount);
+                }
+            } else if (customerAccount.getCurrency().equals(Currency.RUBLE)) {
+                switch (depositForm.getCurrency()) {
+                    case "tenge":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + (amount * 0.18));
+                        break;
+                    case "ruble":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + amount);
+                        break;
+                    case "dollar":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + (amount * 73.57));
+                        break;
+                    default:
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + amount);
+                }
+            } else if (customerAccount.getCurrency().equals(Currency.DOLLAR)) {
+                switch (depositForm.getCurrency()) {
+                    case "tenge":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + (amount * 0.0024));
+                        break;
+                    case "ruble":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + (amount * 0.014));
+                        break;
+                    case "dollar":
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + amount);
+                        break;
+                    default:
+                        customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + amount);
+                }
+            }
+
 
             Deposits deposits = new Deposits(customerAccount, currency, amount);
-            customerAccount.setCustomerAccountBalance(customerAccount.getCustomerAccountBalance() + amount);
             customerAccountRepository.save(customerAccount);
             depositRepository.save(deposits);
 

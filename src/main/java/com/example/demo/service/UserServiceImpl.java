@@ -1,16 +1,16 @@
 package com.example.demo.service;
 
 
-import com.example.demo.entity.*;
+import com.example.demo.models.*;
 import com.example.demo.repository.*;
-import com.example.demo.resources.UserCreateForm;
+import com.example.demo.components.UserCreateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-import static com.example.demo.constants.GeneralConstants.ROLE_USER;
+import static com.example.demo.models.GeneralConstants.ROLE_USER;
 
 @Service
 public class UserServiceImpl implements UserService {

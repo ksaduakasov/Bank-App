@@ -3,20 +3,20 @@
 
 <body>
 
-<nav class="navbar navbar-inverse" th:fragment="after-login">
+<nav style = "background: darkorange;" class="navbar navbar-inverse" th:fragment="after-login">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">KalbekBank</a>
+            <a style = "color: black" class="navbar-brand" href="/">HomePage</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/">Customer Accounts</a></li>
-            <li><a href="/withdrawal/transactions">Withdrawals</a></li>
-            <li><a href="/deposit/transactions">Deposits</a></li>
+            <li><a style = "color: black" href="/">Customer Accounts</a></li>
+            <li><a style = "color: black" href="/withdrawal/transactions">Withdrawals</a></li>
+            <li><a style = "color: black" href="/deposit/transactions">Deposits</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span th:text="${currentUser.username}" /></a></li>
-            <li><a th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a style = "color: black" href="#"><span th:text="${currentUser.username}" /></a></li>
+            <li><a style = "color: black" th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
     </div>
 </nav>

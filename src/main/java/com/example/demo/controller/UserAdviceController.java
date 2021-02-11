@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.authorisation.CustomUserDetails;
+import com.example.demo.service.authorisation.CustomUserDetails;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
